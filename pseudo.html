@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pseudo</title>
+</head>
+<style>
+    .hover-btn:hover {
+        background-color: green;
+        justify-content: center;
+
+    }
+
+    input:focus {
+        border: 2px solid royalblue;
+        outline: none;
+    }
+
+    li:first-child {
+        color: red;
+    }
+
+    h2::before {
+        content: "🔹";
+    }
+
+    p::first-letter {
+        font-size: 200px;
+        color: darkorange;
+    }
+
+    .marker {
+        li::marker {
+            content:"➤";
+            color: red;
+        }
+    }
+
+    .shine-btn {
+        position: relative;
+        padding: 12px 30px;
+        background: #3498db; 
+        color: white;
+        border: none;
+        overflow: hidden;
+        font-size: 16px;
+    }
+
+    .shine-btn::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -75%;
+        width: 50%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.3);
+        transform: skewX(-20deg);
+    }
+
+    .shine-btn:hover::after {
+        animation: slide-shine 0.75s linear forwards;
+    }
+    @keyframes slide-shine {
+        to {
+            left: 125%;
+        }
+    }
+</style>
+<body>
+    <button class="hover-btn">Hover me</button> <br>
+
+    <input type="text" placeholder="focus me"> <br>
+
+    <ul>
+        <li>First Item</li>
+        <li>second Item</li>
+    </ul>
+
+    <h2>Introduction</h2>
+
+    <p>Learning CSS is fun and powerful.</p>
+
+    <ul class="marker">
+        <li>HTML</li>
+        <li>CSS</li>
+    </ul>
+
+    <button class="shine-btn"></button>
+
+
+
+</body>
+</html>
